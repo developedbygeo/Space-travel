@@ -1,4 +1,4 @@
-export interface PropsLayout {
+export type PropsLayout = {
     flexSettings?: {
         justify: string;
         align: string;
@@ -9,4 +9,4 @@ export interface PropsLayout {
         rows: string;
         gap?: string | undefined;
     };
-}
+};
