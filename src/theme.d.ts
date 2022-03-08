@@ -11,6 +11,7 @@ declare module 'styled-components' {
             mainBg: string;
             text: string;
             accent: string;
+            highlight: string;
         };
     }
 }
