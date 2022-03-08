@@ -14,44 +14,49 @@ export const flexMixin = (justify: string, align: string, direction: string) => 
     align-items: ${align};
 `;
 
-export const maxContainer = () => css`
+export const maxContainer = css`
     height: 100%;
     width: 100%;
 `;
 
-export const colorInteract = () => css`
-    transition: color 100ms linear;
+export const colorInteract = css`
+    transition: all 100ms ease-in-out;
     position: relative;
     @media (hover: hover) {
         &:hover {
-            color: ${({ theme }) => theme.colors.accent};
-        }
-        &:hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
+            color: ${({ theme }) => theme.colors.highlight};
         }
     }
-    &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 0.15rem;
-        bottom: -0.5rem;
-        left: 0;
-        background: ${({ theme }) => theme.colors.accent};
-        transform-origin: bottom right;
-        transition: transform 250ms linear;
-    }
-`;
-export const colorPress = () => css`
     &:active {
         transform: scale(1.1);
-        box-shadow: 0px 0px 20px 1px rgba(${({ theme }) => theme.colors.accent}, 0.35);
     }
 `;
 
-export const showActive = () => css`
+export const interactAndHover = css`
+    ${colorInteract};
+    @media (hover: hover) {
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0%;
+            bottom: -3px;
+            width: 100%;
+            height: 0.75px;
+            transform-origin: right;
+            transform: scaleX(0);
+            background: ${({ theme }) => theme.colors.accent};
+            transition: transform 350ms ease;
+        }
+        &:hover {
+            &::after {
+                transform-origin: left;
+                transform: scaleX(1);
+            }
+        }
+    }
+`;
+
+export const showActive = css`
     color: ${({ theme }) => theme.colors.accent};
     font-weight: 600;
     position: relative;
@@ -68,4 +73,10 @@ export const showActive = () => css`
 export const customContainer = (h: string, w: string) => css`
     height: ${h}%;
     width: ${w}%;
+`;
+
+export const resetDefaults = css`
+    border: none;
+    outline: none;
+    background: transparent;
 `;
