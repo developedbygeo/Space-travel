@@ -47,8 +47,8 @@ body{
     height: 100vh;
     width: 100vw;
     overflow-y: hidden;
-    font-family: 'Barlow Condensed', sans-serif;}
-
+    font-family: 'Barlow', sans-serif;
+}
 header{
     height: 10vh;
     width: 100%;
@@ -58,7 +58,7 @@ main{
     height: 95vh;
     width: 100vw;
     margin: auto;
-    background: ${({ theme }) => theme.colors.mainBg};
+    background: transparent;
 
 }
 #root{
@@ -91,7 +91,6 @@ div,
 li,
 a {
   font-size: 1.8rem;
-  font-family: 'Roboto', sans-serif;
   color: ${({ theme }) => theme.colors.text};
 }
 button{
