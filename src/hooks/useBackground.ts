@@ -1,41 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import imgs from '../shared/images';
-
-interface SizeVariants {
-    type: string;
-    mobile: string;
-    tablet: string;
-    desktop: string;
-}
-
-const [
-    homeMobile,
-    homeTablet,
-    homeDesktop,
-    destinationMobile,
-    destinationTablet,
-    destinationDesktop,
-    crewMobile,
-    crewTablet,
-    crewDesktop,
-] = imgs;
-
-const lookup: SizeVariants[] = [
-    { type: 'home', mobile: homeMobile, tablet: homeTablet, desktop: homeDesktop },
-    { type: 'destination', mobile: destinationMobile, tablet: destinationTablet, desktop: destinationDesktop },
-    { type: 'crew', mobile: crewMobile, tablet: crewTablet, desktop: crewDesktop },
-];
+import lookup from '../shared/images';
+import homeDesktop from '../assets/home/background-home-desktop.jpg';
 
 const useBackground = () => {
     const [windowWidth, setwindowWidth] = useState(0);
     const { pathname } = useLocation();
+    const location = pathname.replace('/', '');
 
     const device = windowWidth < 480 ? 'mobile' : windowWidth > 480 && windowWidth < 900 ? 'tablet' : 'desktop';
-
-    const type =
-        pathname !== undefined && pathname === '/' ? 'home' : pathname === 'destination' ? 'destination' : 'crew';
 
     useEffect(() => {
         const handleResize = () => {
@@ -46,11 +20,12 @@ const useBackground = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const lookupMatch = lookup.find((obj) => obj.type === type);
+    const lookupMatch = lookup.find((obj) => obj.location === location);
 
     if (lookupMatch) {
-        return lookupMatch[device];
+        return { width: windowWidth, img: lookupMatch[device] };
     }
+    return { width: windowWidth, img: homeDesktop };
 };
 
 export default useBackground;
