@@ -9,7 +9,7 @@ import { GoThreeBars, GoX } from 'react-icons/go';
 import { UnstyledButton } from '../UI/Button.styled';
 
 const Header = () => {
-    const { width } = useBackground();
+    const width = useBackground();
     const [navIsEnabled, setNavIsEnabled] = useState(false);
 
     const navClass = width < 768 ? 'mobile-nav' : width > 768 && width < 1025 ? 'tablet-nav' : 'desktop-nav';
