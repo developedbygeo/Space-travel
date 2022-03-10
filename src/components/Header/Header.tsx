@@ -11,7 +11,6 @@ import { UnstyledButton } from '../UI/Button.styled';
 const Header = () => {
     const width = useBackground();
     const [navIsEnabled, setNavIsEnabled] = useState(false);
-
     const navClass = width < 768 ? 'mobile-nav' : width > 768 && width < 1025 ? 'tablet-nav' : 'desktop-nav';
 
     const navToggleHandler = () => {
@@ -20,15 +19,19 @@ const Header = () => {
 
     const buttonContent = !navIsEnabled ? <GoThreeBars /> : <GoX />;
 
+    const shouldButtonRender = width < 768 && (
+        <UnstyledButton onClick={navToggleHandler} title="Toggle Menu" className="menu">
+            {buttonContent}
+        </UnstyledButton>
+    );
+
     return (
         <StyledHeader>
             <Link to="/">
                 <Logo className="logo" />
             </Link>
-            <UnstyledButton onClick={navToggleHandler} title="Toggle Menu" className="menu">
-                {buttonContent}
-            </UnstyledButton>
-            {navIsEnabled && <Nav className={navClass} />}
+            {shouldButtonRender}
+            {width < 768 ? navIsEnabled && <Nav className={navClass} /> : <Nav className={navClass} />}
         </StyledHeader>
     );
 };
