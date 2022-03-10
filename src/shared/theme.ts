@@ -11,6 +11,7 @@ const myTheme: DefaultTheme = {
         text: '#ffffff',
         accent: '#d0d6f9',
         highlight: '#A4B0F4',
+        nav: '#979797',
     },
 };
 
