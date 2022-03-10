@@ -1,19 +1,21 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+
 import GlobalStyle from './shared/globalStyle';
 import Header from './components/Header/Header';
-
-import { AppContainer } from './components/UI/Container.styled';
 import Home from './pages/Home';
+import { matchRegex } from './shared/appBackgroundImg';
+import { AppContainer } from './components/UI/Container.styled';
 
-import useBackground from './hooks/useBackground';
+const regex = /^\/[a-z]+/;
 
 const App = () => {
-    const { img } = useBackground();
+    const { pathname } = useLocation();
+    const derivedClassname = matchRegex(pathname, regex, 'home');
 
     return (
         <>
             <GlobalStyle />
-            <AppContainer img={img}>
+            <AppContainer className={`appcont ${derivedClassname}`}>
                 <Header />
                 <main>
                     <Routes>
