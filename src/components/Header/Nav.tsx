@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { BaseProps } from '../../shared/models/props.model';
 
-const Nav = React.memo(({ className }: BaseProps) => {
+const Nav = ({ className }: BaseProps) => {
     const isMobile = className === 'mobile-nav';
 
     return (
@@ -28,8 +28,8 @@ const Nav = React.memo(({ className }: BaseProps) => {
             </div>
         </nav>
     );
-});
+};
 
 Nav.displayName = 'Nav';
 
-export default Nav;
+export default React.memo(Nav);
