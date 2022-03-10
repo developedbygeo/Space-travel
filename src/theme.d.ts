@@ -12,6 +12,7 @@ declare module 'styled-components' {
             text: string;
             accent: string;
             highlight: string;
+            nav: string;
         };
     }
 }
