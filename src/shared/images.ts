@@ -10,15 +10,11 @@ import crewMobile from '../assets/crew/background-crew-mobile.jpg';
 import crewTablet from '../assets/crew/background-crew-tablet.jpg';
 import crewDesktop from '../assets/crew/background-crew-desktop.jpg';
 
-import technologyMobile from '../assets/technology/background-technology-mobile.jpg';
-import technologyTablet from '../assets/technology/background-technology-tablet.jpg';
-import technologyDesktop from '../assets/technology/background-technology-desktop.jpg';
+import techMobile from '../assets/technology/background-technology-mobile.jpg';
+import techTablet from '../assets/technology/background-technology-tablet.jpg';
+import techDesktop from '../assets/technology/background-technology-desktop.jpg';
 
-const lookup = [
-    { location: 'home', mobile: homeMobile, tablet: homeTablet, desktop: homeDesktop },
-    { location: 'destination', mobile: destinationMobile, tablet: destinationTablet, desktop: destinationDesktop },
-    { location: 'crew', mobile: crewMobile, tablet: crewTablet, desktop: crewDesktop },
-    { location: 'technology', mobile: technologyMobile, tablet: technologyTablet, desktop: technologyDesktop },
-];
-
-export default lookup;
+export const homeImg = [homeMobile, homeTablet, homeDesktop];
+export const destinationImg = [destinationMobile, destinationTablet, destinationDesktop];
+export const crewImg = [crewMobile, crewTablet, crewDesktop];
+export const techImg = [techMobile, techTablet, techDesktop];
