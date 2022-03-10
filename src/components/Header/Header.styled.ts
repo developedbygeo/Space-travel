@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+import { devices } from '../../shared/breakpoints';
 import { flexMixin } from '../../shared/mixins';
 import { interactAndHover } from '../../shared/mixins';
 
@@ -10,6 +12,9 @@ const StyledHeader = styled.header`
     & > .menu {
         z-index: 10;
         color: ${({ theme }) => theme.colors.accent};
+        @media ${devices.tablet} {
+            display: none;
+        }
     }
     .logo {
         transform: scale(0.75);
@@ -53,6 +58,16 @@ const StyledHeader = styled.header`
             p {
                 font-size: 2.5rem;
             }
+        }
+    }
+    .tablet-nav {
+        width: 50%;
+        height: 100%;
+
+        .link-wrapper {
+            ${flexMixin('space-between', 'center', 'row')};
+            background: ${({ theme }) => theme.colors.nav};
+            height: 100%;
         }
     }
 `;
