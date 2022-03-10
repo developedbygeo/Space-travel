@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { devices } from './breakpoints';
 
+import variableBackground from './appBackgroundImg';
+
 const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
@@ -63,6 +65,7 @@ main{
 }
 #root{
   background: ${({ theme }) => theme.colors.mainBg};
+  ${variableBackground};
 }
 
 h1 {
