@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { devices } from '../../shared/breakpoints';
 import { flexMixin } from '../../shared/mixins';
-import { interactAndHover } from '../../shared/mixins';
+import { interactAndHover } from '../../shared/styles/interactive.styles';
 
 const StyledHeader = styled.header`
     padding-inline: 5%;
@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
 
     & > .menu {
         z-index: 10;
-        color: ${({ theme }) => theme.colors.accent};
+        color: rgb(${({ theme }) => theme.colors.accent});
         @media ${devices.tablet} {
             display: none;
         }
@@ -21,10 +21,6 @@ const StyledHeader = styled.header`
     }
     .num {
         font-weight: 800;
-    }
-    a {
-        ${interactAndHover};
-        font-family: 'Barlow Condensed', sans-serif;
     }
 
     /* mobile-specific */
@@ -37,7 +33,7 @@ const StyledHeader = styled.header`
         width: 60vw;
         padding: 25% 8vw;
         ${flexMixin('flex-start', 'flex-start', 'column')};
-        background-color: rgba(255, 255, 255, 0.55);
+        background-color: rgba(${({ theme }) => theme.colors.nav}, 0.95);
 
         @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
             background-color: rgba(151, 151, 151, 0.25);
@@ -53,6 +49,9 @@ const StyledHeader = styled.header`
                 display: flex;
                 gap: 2vw;
                 letter-spacing: 2.7px;
+                ${interactAndHover};
+                font-family: 'Barlow Condensed', sans-serif;
+                text-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
             }
             span,
             p {
@@ -68,6 +67,10 @@ const StyledHeader = styled.header`
             ${flexMixin('space-between', 'center', 'row')};
             background: ${({ theme }) => theme.colors.nav};
             height: 100%;
+        }
+        a {
+            ${interactAndHover};
+            font-family: 'Barlow Condensed', sans-serif;
         }
     }
 `;
