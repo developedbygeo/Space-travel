@@ -3,6 +3,11 @@ import 'styled-components';
 declare module 'styled-components' {
     export interface DefaultTheme {
         typography: {
+            fonts: {
+                heading: string;
+                subheading: string;
+                body: string;
+            };
             lineHeight: {
                 body: string;
             };
