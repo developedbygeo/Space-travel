@@ -3,6 +3,8 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import GlobalStyle from './shared/globalStyle';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
+import Destination from './pages/Destination';
+
 import { matchRegex } from './shared/appBackgroundImg';
 import { AppContainer } from './components/UI/Container.styled';
 
@@ -21,6 +23,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />
                         <Route path="/home" element={<Home />} />
+                        <Route path="/destination" element={<Destination />} />
                     </Routes>
                 </main>
             </AppContainer>
