@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     font-size: 62.5%;
     @media ${devices.mobileSS}{
@@ -18,7 +19,7 @@ html{
       font-size: 35%;
     }
     @media ${devices.mobileM}{
-      font-size: 40%;
+      font-size: 50%;
     }
     @media ${devices.mobileL}{
       font-size: 50%;
@@ -48,7 +49,7 @@ html{
 body{
     height: 100vh;
     width: 100vw;
-    overflow-y: hidden;
+    overflow: hidden;
     font-family: 'Barlow', sans-serif;
 }
 header{
@@ -64,12 +65,12 @@ main{
 
 }
 #root{
-  background: ${({ theme }) => theme.colors.mainBg};
+  background: rgb(${({ theme }) => theme.colors.mainBg});
   ${variableBackground};
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 4rem;
   letter-spacing: 0.175rem;
 }
 h2 {
@@ -82,7 +83,8 @@ h3 {
 }
 
 h1, h2, h3, h4, h5{
-  font-family: 'Bellefair', serif;
+  font-family: ${({ theme }) => theme.typography.fonts.heading};
+  font-weight: 400;
 }
 p,
 button,
@@ -94,7 +96,11 @@ div,
 li,
 a {
   font-size: 1.8rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: rgb(${({ theme }) => theme.colors.text});
+}
+li{
+  text-decoration: none;
+  list-style: none;
 }
 button{
   cursor: pointer;
