@@ -1,4 +1,4 @@
-export type PropsLayout = {
+export type LayoutProps = {
     flexSettings?: {
         justify: string;
         align: string;

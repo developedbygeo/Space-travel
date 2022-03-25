@@ -1,6 +1,6 @@
-import { PropsLayout } from './utils.model';
+import { LayoutProps } from './utils.model';
 
-export type BaseProps = PropsLayout & {
+export type BaseProps = LayoutProps & {
     children?: React.ReactNode;
     className?: string;
     onClick?: () => void;
