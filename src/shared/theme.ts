@@ -13,6 +13,7 @@ const myTheme: DefaultTheme = {
     },
     colors: {
         mainBg: '11, 13, 23' || '#0b0d17',
+        darkAccent: '56, 59, 75' || '#383B4B',
         text: '255, 255, 255' || '#ffffff',
         accent: '208, 214, 249' || '#d0d6f9',
         highlight: '164, 176, 244' || '#a4b0f4',
