@@ -33,3 +33,37 @@ export const CtaButton = styled.button<StyledProps>`
     ${interactCta}
     ${elevationThree}
 `;
+
+export const DotToggle = styled.button<StyledProps>`
+    ${resetDefaults};
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 1rem;
+    background: rgb(${({ theme }) => theme.colors.nav});
+    ${elevationThree};
+
+    @media (hover: hover) {
+        &:hover {
+            background: rgb(${({ theme }) => theme.colors.accent});
+        }
+    }
+    &.btn-active {
+        background: rgb(${({ theme }) => theme.colors.text});
+    }
+`;
+
+export const TechButton = styled(DotToggle)`
+    width: 4rem;
+    height: 4rem;
+    font-family: ${({ theme }) => theme.typography.fonts.heading};
+    background: transparent;
+    border: 0.5px solid rgba(${({ theme }) => theme.colors.accent}, 0.5);
+    padding: 0;
+    @media (hover: hover) {
+        &:hover,
+        &.btn-active {
+            color: rgb(${({ theme }) => theme.colors.mainBg});
+        }
+    }
+`;
