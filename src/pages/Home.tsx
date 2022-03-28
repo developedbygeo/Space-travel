@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import { StyledSection } from '../components/UI/Container.styled';
+import { Description, BigHeading } from '../components/UI/Text.styled';
 import { CtaButton } from '../components/UI/Button.styled';
 
 const Home = () => {
@@ -11,16 +12,14 @@ const Home = () => {
     return (
         <StyledSection>
             <article className="landing-text">
-                <div className="landing-header-wrapper">
-                    <h1 className="landing-intro">SO, YOU WANT TO TRAVEL TO</h1>
-                    <h2>SPACE</h2>
-                </div>
+                <p className="landing-intro">SO, YOU WANT TO TRAVEL TO</p>
+                <BigHeading>SPACE</BigHeading>
                 <article>
-                    <p className="landing-desc">
+                    <Description>
                         Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not
                         hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of
                         this world experience!
-                    </p>
+                    </Description>
                 </article>
             </article>
             <div className="landing-cta-wrap">
