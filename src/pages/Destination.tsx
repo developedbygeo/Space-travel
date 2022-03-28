@@ -1,27 +1,31 @@
 import { useState } from 'react';
 
 import { StyledSection } from '../components/UI/Container.styled';
-import DestinationDetails from '../components/Destination/DestinationDetails';
-import ContentHeader from '../components/UI/ContentHeader/ContentHeader';
-import destinationData from '../assets/data.json';
+import ContentHeader from '../components/ImageDisplay/ImageDisplay';
+import MainText from '../components/TextDisplay/MainText';
+import ExtraText from '../components/TextDisplay/ExtraText';
+import StyledTextDisplay from '../components/UI/TextDisplay.styled';
+import StyledList from '../components/UI/List.styled';
+
+import data from '../assets/data.json';
 
 const Destination = () => {
-    const { destinations } = destinationData;
+    const { destinations } = data;
     const [currDestination, setCurrDestination] = useState(destinations[0]);
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const currentImage = require(`../assets${currDestination.images.webp}`);
+
+    const textDetails = { heading: currDestination.name, body: currDestination.description };
 
     const destinationHandler = (destination: string) => {
         const activeDestination = destinations.find((obj) => obj.name === destination);
         if (activeDestination) setCurrDestination(activeDestination);
     };
 
-    // TODO create modular navigation for the ul (see design)
-
     return (
         <StyledSection className="destination">
-            <ContentHeader step="01" heading="pick your destination" path={currentImage} alt={currDestination.name}>
-                <ul>
+            <ContentHeader step="01." heading="pick your destination" path={currentImage} alt={currDestination.name}>
+                <StyledList>
                     {destinations.map((destination, index) => (
                         <li
                             className={destination.name === currDestination.name ? 'active' : ''}
@@ -31,9 +35,15 @@ const Destination = () => {
                             {destination.name}
                         </li>
                     ))}
-                </ul>
+                </StyledList>
             </ContentHeader>
-            <DestinationDetails details={currDestination} />
+            <StyledTextDisplay className="extra">
+                <MainText details={textDetails} />
+                <article className="additional-info">
+                    <ExtraText extraDetails={{ title: 'avg. distance', data: currDestination.distance }} />
+                    <ExtraText extraDetails={{ title: 'est. travel time', data: currDestination.travel }} />
+                </article>
+            </StyledTextDisplay>
         </StyledSection>
     );
 };
