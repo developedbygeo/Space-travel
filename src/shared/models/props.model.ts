@@ -13,4 +13,5 @@ export type StyledProps = BaseProps & {
     height?: string;
     padding?: string;
     color?: string;
+    opacity?: number;
 };
