@@ -75,6 +75,7 @@ export const showActive = css`
         width: 100%;
         height: 0.35rem;
         bottom: -0.5rem;
+        left: 0%;
         background: rgb(${({ theme }) => theme.colors.accent});
     }
 `;
