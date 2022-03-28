@@ -9,19 +9,19 @@ const Nav = ({ className }: BaseProps) => {
     return (
         <nav className={className}>
             <div className="link-wrapper">
-                <NavLink to="/home">
+                <NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : '')}>
                     {isMobile && <span className="num">00</span>}
                     <p>HOME</p>
                 </NavLink>
-                <NavLink to="/destination">
+                <NavLink to="/destination" className={({ isActive }) => (isActive ? 'active' : '')}>
                     {isMobile && <span className="num">01</span>}
                     <p>DESTINATION</p>
                 </NavLink>
-                <NavLink to="/crew">
+                <NavLink to="/crew" className={({ isActive }) => (isActive ? 'active' : '')}>
                     {isMobile && <span className="num">02</span>}
                     <p>CREW</p>
                 </NavLink>
-                <NavLink to="/technology">
+                <NavLink to="/technology" className={({ isActive }) => (isActive ? 'active' : '')}>
                     {isMobile && <span className="num">03</span>}
                     <p>TECHNOLOGY</p>
                 </NavLink>
