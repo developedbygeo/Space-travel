@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 import { StyledSection } from '../components/UI/Container.styled';
+import DestinationDetails from '../components/Destination/DestinationDetails';
+import ContentHeader from '../components/UI/ContentHeader/ContentHeader';
 import destinationData from '../assets/data.json';
 
 const Destination = () => {
@@ -14,22 +16,15 @@ const Destination = () => {
         if (activeDestination) setCurrDestination(activeDestination);
     };
 
-    // TODO break it down to individual presentational components
+    // TODO create modular navigation for the ul (see design)
 
     return (
         <StyledSection className="destination">
-            <article>
-                <div className="destination-header">
-                    <span>01</span>
-                    <h2>PICK YOUR DESTINATION</h2>
-                </div>
-                <div className="destination-img-cont">
-                    <img src={currentImage} alt={`cover of ${currDestination.name}`} />
-                </div>
+            <ContentHeader step="01" heading="pick your destination" path={currentImage} alt={currDestination.name}>
                 <ul>
                     {destinations.map((destination, index) => (
                         <li
-                            className={destination.name === location.search ? 'active' : ''}
+                            className={destination.name === currDestination.name ? 'active' : ''}
                             onClick={destinationHandler.bind(null, destination.name)}
                             key={index}
                         >
@@ -37,11 +32,8 @@ const Destination = () => {
                         </li>
                     ))}
                 </ul>
-            </article>
-            <article className="destination-text-content">
-                <h1>{currDestination.name}</h1>
-                <p>{currDestination.description}</p>
-            </article>
+            </ContentHeader>
+            <DestinationDetails details={currDestination} />
         </StyledSection>
     );
 };
