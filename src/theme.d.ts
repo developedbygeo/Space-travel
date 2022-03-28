@@ -14,6 +14,7 @@ declare module 'styled-components' {
         };
         colors: {
             mainBg: string;
+            darkAccent: string;
             text: string;
             accent: string;
             highlight: string;
