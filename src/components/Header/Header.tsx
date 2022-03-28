@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import useBackground from '../../hooks/useBackground';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 import { ReactComponent as Logo } from '../../assets/common/logo.svg';
 import StyledHeader from './Header.styled';
@@ -9,9 +9,17 @@ import { GoThreeBars, GoX } from 'react-icons/go';
 import { UnstyledButton } from '../UI/Button.styled';
 
 const Header = () => {
-    const width = useBackground();
+    const width = useWindowWidth();
+    const { pathname } = useLocation();
     const [navIsEnabled, setNavIsEnabled] = useState(false);
     const navClass = width < 768 ? 'mobile-nav' : width > 768 && width < 1025 ? 'tablet-nav' : 'desktop-nav';
+
+    useEffect(() => {
+        const timer = window.setTimeout(() => {
+            setNavIsEnabled(false);
+        }, 200);
+        return () => clearTimeout(timer);
+    }, [pathname]);
 
     const navToggleHandler = () => {
         setNavIsEnabled((prevState) => !prevState);
