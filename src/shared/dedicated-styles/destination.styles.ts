@@ -1,25 +1,14 @@
 import { css } from 'styled-components';
 
-import { flexMixin } from '../mixins';
+import { flexMixin, gridMixin } from '../mixins';
 import { interactAndHover, showActive } from '../styles/interactive.styles';
 
 const destinationStyling = css`
     &.destination {
         height: 100%;
-        ${flexMixin('space-evenly', 'center', 'column')};
-    }
-    .destination-header {
-        width: 100%;
-        ${flexMixin('center', 'center', 'row')};
-        gap: 2rem;
-        h2,
-        span {
-            font-size: 2rem;
-            font-family: ${({ theme }) => theme.typography.fonts.subheading};
-        }
-        span {
-            opacity: 0.25;
-        }
+        ${gridMixin('1fr', '0.8fr 0.43fr 0.5fr')};
+        gap: 2vh;
+        padding-block: 0;
     }
     ul {
         ${flexMixin('center', 'center', 'row')};
@@ -28,6 +17,7 @@ const destinationStyling = css`
         font-family: ${({ theme }) => theme.typography.fonts.subheading};
         li {
             cursor: pointer;
+            letter-spacing: 0.15rem;
             ${interactAndHover};
             &::after {
                 height: 0.25rem;
@@ -35,21 +25,6 @@ const destinationStyling = css`
         }
         .active {
             ${showActive};
-        }
-    }
-
-    .destination-img-cont {
-        height: 30vh;
-        width: 30vh;
-        img {
-            width: 100%;
-        }
-    }
-
-    .destination-text-content {
-        h1 {
-            font-size: 8rem;
-            text-transform: uppercase;
         }
     }
 `;
