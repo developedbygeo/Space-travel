@@ -19,7 +19,7 @@ html{
       font-size: 35%;
     }
     @media ${devices.mobileM}{
-      font-size: 50%;
+      font-size: 55%;
     }
     @media ${devices.mobileL}{
       font-size: 50%;
