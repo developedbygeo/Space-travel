@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 import { devices } from '../../shared/breakpoints';
 import { flexMixin } from '../../shared/mixins';
-import { interactAndHover } from '../../shared/styles/interactive.styles';
+import { interactAndHover, showActive } from '../../shared/styles/interactive.styles';
 
 const StyledHeader = styled.header`
     padding-inline: 5%;
@@ -51,7 +51,7 @@ const StyledHeader = styled.header`
                 letter-spacing: 2.7px;
                 ${interactAndHover};
                 font-family: 'Barlow Condensed', sans-serif;
-                text-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+                text-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
             }
             span,
             p {
@@ -71,6 +71,12 @@ const StyledHeader = styled.header`
         a {
             ${interactAndHover};
             font-family: 'Barlow Condensed', sans-serif;
+        }
+    }
+    .active {
+        ${showActive}
+        span, p {
+            color: rgb(${({ theme }) => theme.colors.accent});
         }
     }
 `;
