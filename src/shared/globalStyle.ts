@@ -16,13 +16,13 @@ html{
       font-size: 27%;
     }
     @media ${devices.mobileS}{
-      font-size: 35%;
+      font-size: 40%;
     }
     @media ${devices.mobileM}{
-      font-size: 55%;
+      font-size: 45%;
     }
     @media ${devices.mobileL}{
-      font-size: 50%;
+      font-size: 60%;
     }
     @media ${devices.tablet}{
       font-size: 60%;
@@ -49,7 +49,7 @@ html{
 body{
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Barlow', sans-serif;
 }
 header{
@@ -62,6 +62,7 @@ main{
     width: 100vw;
     margin: auto;
     background: transparent;
+    overflow-x: hidden;
 
 }
 #root{
