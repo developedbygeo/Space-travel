@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { homeImg, destinationImg, crewImg, techImg } from './images';
+import { homeImg, destinationImg, crewImg, techImg, Img404 } from './images';
 
 export const matchRegex = (operand: string, regex: RegExp, defaultValue: string) => {
     const match = operand.match(regex);
@@ -49,6 +49,10 @@ const variableBackground = css`
         @media (min-width: 1025px) {
             background-image: url(${techImg[2]});
         }
+    }
+    & > .notFound {
+        background: url(${Img404}) center no-repeat;
+        background-size: cover;
     }
 `;
 export default variableBackground;
