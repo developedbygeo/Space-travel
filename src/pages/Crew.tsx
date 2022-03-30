@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { StyledSection } from '../components/UI/Container.styled';
-import ContentHeader from '../components/ImageDisplay/ImageDisplay';
+import ContentDisplay from '../components/ContentDisplay/ContentDisplay';
 import MainText from '../components/TextDisplay/MainText';
 import StyledTextDisplay from '../components/UI/TextDisplay.styled';
 import StyledList from '../components/UI/List.styled';
@@ -24,7 +24,7 @@ const Crew = () => {
 
     return (
         <StyledSection className="crew">
-            <ContentHeader step="02." heading="meet your crew" path={currentImage} alt={currCrew.name}>
+            <ContentDisplay step="02." heading="meet your crew" path={currentImage} alt={currCrew.name}>
                 <StyledList>
                     {crew.map((member, index) => (
                         <DotToggle
@@ -35,7 +35,7 @@ const Crew = () => {
                         />
                     ))}
                 </StyledList>
-            </ContentHeader>
+            </ContentDisplay>
             <StyledTextDisplay>
                 <MainText details={crewDetails} />
             </StyledTextDisplay>

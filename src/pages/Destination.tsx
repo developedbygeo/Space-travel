@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { StyledSection } from '../components/UI/Container.styled';
-import ContentHeader from '../components/ImageDisplay/ImageDisplay';
+import ContentDisplay from '../components/ContentDisplay/ContentDisplay';
 import MainText from '../components/TextDisplay/MainText';
 import ExtraText from '../components/TextDisplay/ExtraText';
 import StyledTextDisplay from '../components/UI/TextDisplay.styled';
@@ -24,7 +24,7 @@ const Destination = () => {
 
     return (
         <StyledSection className="destination">
-            <ContentHeader step="01." heading="pick your destination" path={currentImage} alt={currDestination.name}>
+            <ContentDisplay step="01." heading="pick your destination" path={currentImage} alt={currDestination.name}>
                 <StyledList>
                     {destinations.map((destination, index) => (
                         <li
@@ -36,7 +36,7 @@ const Destination = () => {
                         </li>
                     ))}
                 </StyledList>
-            </ContentHeader>
+            </ContentDisplay>
             <StyledTextDisplay className="extra">
                 <MainText details={textDetails} />
                 <article className="additional-info">
