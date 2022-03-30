@@ -49,6 +49,22 @@ const landingStyling = css`
             }
         }
     }
+    @media ${devices.landscapeMobileSS} {
+        &.landing {
+            height: 100%;
+            .landing-text {
+                width: 80%;
+                margin: auto;
+            }
+            button {
+                height: 20rem;
+                width: 20rem;
+                &:hover::before {
+                    clip-path: circle(32% at 50% 50%);
+                }
+            }
+        }
+    }
 `;
 
 export default landingStyling;
