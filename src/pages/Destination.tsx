@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import useData from '../hooks/useData';
+import { DestinationDataType } from '../shared/models/data.model';
 
 import { StyledSection } from '../components/UI/Container.styled';
 import ContentDisplay from '../components/ContentDisplay/ContentDisplay';
@@ -7,26 +8,21 @@ import ExtraText from '../components/TextDisplay/ExtraText';
 import StyledTextDisplay from '../components/UI/TextDisplay.styled';
 import StyledList from '../components/UI/List.styled';
 
-import data from '../assets/data.json';
-
 const Destination = () => {
-    const { destinations } = data;
-    const [currDestination, setCurrDestination] = useState(destinations[0]);
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const currentImage = require(`../assets${currDestination.images.webp}`);
-
-    const textDetails = { heading: currDestination.name, body: currDestination.description };
-
-    const destinationHandler = (destination: string) => {
-        const activeDestination = destinations.find((obj) => obj.name === destination);
-        if (activeDestination) setCurrDestination(activeDestination);
-    };
+    const [currDestination, destinationData, destinationHandler] = useData('destinations');
+    const { name, description, distance, travel, images } = currDestination as DestinationDataType;
+    const textDetails = { heading: name, body: description };
 
     return (
         <StyledSection className="destination">
-            <ContentDisplay step="01." heading="pick your destination" path={currentImage} alt={currDestination.name}>
+            <ContentDisplay
+                step="01."
+                heading="pick your destination"
+                path={require(`../assets${images.webp}`)}
+                alt={name}
+            >
                 <StyledList>
-                    {destinations.map((destination, index) => (
+                    {destinationData.map((destination, index) => (
                         <li
                             className={destination.name === currDestination.name ? 'active' : ''}
                             onClick={destinationHandler.bind(null, destination.name)}
@@ -40,8 +36,8 @@ const Destination = () => {
             <StyledTextDisplay className="extra">
                 <MainText details={textDetails} />
                 <article className="additional-info">
-                    <ExtraText extraDetails={{ title: 'avg. distance', data: currDestination.distance }} />
-                    <ExtraText extraDetails={{ title: 'est. travel time', data: currDestination.travel }} />
+                    <ExtraText extraDetails={{ title: 'avg. distance', data: distance }} />
+                    <ExtraText extraDetails={{ title: 'est. travel time', data: travel }} />
                 </article>
             </StyledTextDisplay>
         </StyledSection>
