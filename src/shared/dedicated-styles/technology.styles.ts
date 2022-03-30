@@ -89,6 +89,33 @@ const technologyStyling = css`
             }
         }
     }
+    @media ${devices.landscapeMobileSS} {
+        &.technology {
+            padding-block: 1vh;
+            ${gridMixin('repeat(2, 1fr)', '0.2fr 1fr 1fr')};
+
+            .header {
+                justify-content: flex-start;
+                margin-top: 5vh;
+                grid-area: 1/1/1/3;
+            }
+            .img-cont {
+                grid-area: 2/2;
+            }
+            .text-content {
+                margin-block: 0;
+            }
+            section {
+                grid-area: 3/2/3/3;
+                padding-block: 2vh;
+                width: 80%;
+            }
+            ul {
+                grid-area: 2/1/4/1;
+                flex-direction: column;
+            }
+        }
+    }
 `;
 
 export default technologyStyling;
