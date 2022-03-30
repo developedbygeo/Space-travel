@@ -1,6 +1,5 @@
-import StyledContent from './ImageDisplay.styled';
-
 import { IntroSpan } from '../UI/Text.styled';
+import { StyledContentHeader, StyledContentImage } from './ContentDisplay.styled';
 
 type ContentProps = {
     step: string;
@@ -10,19 +9,19 @@ type ContentProps = {
     children?: React.ReactNode;
 };
 
-const ImageDisplay = ({ step, heading, path, alt, children }: ContentProps) => {
+const ContentDisplay = ({ step, heading, path, alt, children }: ContentProps) => {
     return (
-        <StyledContent>
-            <div className="header">
+        <>
+            <StyledContentHeader className="header">
                 <IntroSpan>{step}</IntroSpan>
                 <IntroSpan as="h2">{heading}</IntroSpan>
-            </div>
+            </StyledContentHeader>
             <div className="img-cont">
-                <img src={path} alt={`cover of ${alt}`} />
+                <StyledContentImage src={path} alt={`cover of ${alt}`} />
             </div>
             {children}
-        </StyledContent>
+        </>
     );
 };
 
-export default ImageDisplay;
+export default ContentDisplay;

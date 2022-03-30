@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { devices } from '../../shared/breakpoints';
 import { flexMixin } from '../../shared/mixins';
 
 const StyledContent = styled.article`
@@ -21,4 +22,22 @@ const StyledContent = styled.article`
         object-fit: contain;
     }
 `;
+
+export const StyledContentHeader = styled.div`
+    width: 100%;
+    ${flexMixin('center', 'center', 'row')};
+    gap: 2rem;
+    span {
+        opacity: 0.45;
+    }
+    @media ${devices.tablet} {
+        justify-content: flex-start;
+    }
+`;
+export const StyledContentImage = styled.img`
+    width: 100%;
+    height: 25vh;
+    object-fit: contain;
+`;
+
 export default StyledContent;
