@@ -14,7 +14,11 @@ import techMobile from '../assets/technology/background-technology-mobile.jpg';
 import techTablet from '../assets/technology/background-technology-tablet.jpg';
 import techDesktop from '../assets/technology/background-technology-desktop.jpg';
 
+import NotFound from '../assets/notFound.jpg';
+
 export const homeImg = [homeMobile, homeTablet, homeDesktop];
 export const destinationImg = [destinationMobile, destinationTablet, destinationDesktop];
 export const crewImg = [crewMobile, crewTablet, crewDesktop];
 export const techImg = [techMobile, techTablet, techDesktop];
+
+export const Img404 = NotFound;
