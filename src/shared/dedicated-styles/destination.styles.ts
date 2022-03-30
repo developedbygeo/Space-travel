@@ -48,7 +48,7 @@ const destinationStyling = css`
             }
         }
     }
-    @media ${devices.laptop} {
+    @media ${devices.laptop}, ${devices.landscapeMobileSS} {
         &.destination {
             ${gridMixin('repeat(2, 1fr)', '0.1fr 0.1fr 1fr')}
 
@@ -88,6 +88,21 @@ const destinationStyling = css`
             p,
             h4 {
                 text-align: left;
+            }
+        }
+    }
+    @media ${devices.landscapeMobileSS} {
+        &.destination {
+            .header {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 0 0 6vh 3vh;
+            }
+            .text-content {
+                margin-block: 5vh;
+            }
+            .additional-info {
+                flex-direction: row;
             }
         }
     }
