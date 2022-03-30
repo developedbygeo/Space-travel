@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useWindowWidth from '../hooks/useWindowWidth';
 
 import { StyledSection } from '../components/UI/Container.styled';
-import ContentHeader from '../components/ImageDisplay/ImageDisplay';
+import ContentDisplay from '../components/ContentDisplay/ContentDisplay';
 import MainText from '../components/TextDisplay/MainText';
 import ExtraText from '../components/TextDisplay/ExtraText';
 import StyledTextDisplay from '../components/UI/TextDisplay.styled';
@@ -30,7 +30,7 @@ const Technology = () => {
 
     return (
         <StyledSection className="technology">
-            <ContentHeader step="03." heading="space launch 101" path={currentImage} alt={currTech.name}>
+            <ContentDisplay step="03." heading="space launch 101" path={currentImage} alt={currTech.name}>
                 <StyledList>
                     {technology.map((tech, index) => (
                         <TechButton
@@ -43,7 +43,7 @@ const Technology = () => {
                         </TechButton>
                     ))}
                 </StyledList>
-            </ContentHeader>
+            </ContentDisplay>
             <StyledTextDisplay>
                 <MainText details={techDetails} />
             </StyledTextDisplay>
