@@ -10,7 +10,7 @@ const Home = () => {
     const exploreHandler = () => navigate('/destination');
 
     return (
-        <StyledSection>
+        <StyledSection className="landing">
             <article className="landing-text">
                 <p className="landing-intro">SO, YOU WANT TO TRAVEL TO</p>
                 <BigHeading>SPACE</BigHeading>
