@@ -5,6 +5,7 @@ import landingStyling from '../../shared/dedicated-styles/landing.styles';
 import destinationStyling from '../../shared/dedicated-styles/destination.styles';
 import crewStyling from '../../shared/dedicated-styles/crew.styles';
 import technologyStyling from '../../shared/dedicated-styles/technology.styles';
+import notFoundStyling from '../../shared/dedicated-styles/notFound.styles';
 import { flexMixin } from '../../shared/mixins';
 import { LayoutProps } from '../../shared/models/utils.model';
 import { getLayout } from '../../shared/utils';
@@ -34,4 +35,5 @@ export const StyledSection = styled.section<LayoutProps>`
     ${destinationStyling};
     ${crewStyling};
     ${technologyStyling};
+    ${notFoundStyling};
 `;
