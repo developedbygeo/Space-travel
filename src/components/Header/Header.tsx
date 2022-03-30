@@ -12,7 +12,7 @@ const Header = () => {
     const width = useWindowWidth();
     const { pathname } = useLocation();
     const [navIsEnabled, setNavIsEnabled] = useState(false);
-    const navClass = width < 768 ? 'mobile-nav' : width > 768 && width < 1025 ? 'tablet-nav' : 'desktop-nav';
+    const navClass = width < 768 ? 'mobile-nav' : width > 767 && width < 1025 ? 'tablet-nav' : 'desktop-nav';
 
     useEffect(() => {
         const timer = window.setTimeout(() => {
