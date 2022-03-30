@@ -58,7 +58,7 @@ header{
 }
 main{
     position: relative;
-    height: 95vh;
+    height: 90vh;
     width: 100vw;
     margin: auto;
     background: transparent;
