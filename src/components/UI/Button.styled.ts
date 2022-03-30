@@ -39,7 +39,6 @@ export const DotToggle = styled.button<StyledProps>`
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    padding: 1rem;
     background: rgb(${({ theme }) => theme.colors.nav});
     ${elevationThree};
 
@@ -59,7 +58,10 @@ export const TechButton = styled(DotToggle)`
     font-family: ${({ theme }) => theme.typography.fonts.heading};
     background: transparent;
     border: 0.5px solid rgba(${({ theme }) => theme.colors.accent}, 0.5);
-    padding: 0;
+    color: rgb(${({ theme }) => theme.colors.text});
+    &.btn-active {
+        color: rgb(${({ theme }) => theme.colors.mainBg});
+    }
     @media (hover: hover) {
         &:hover,
         &.btn-active {
