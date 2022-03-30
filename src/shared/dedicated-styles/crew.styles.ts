@@ -53,7 +53,7 @@ const crewStyling = css`
             }
         }
     }
-    @media ${devices.laptop} {
+    @media ${devices.laptop}, ${devices.landscapeMobileSS} {
         &.crew {
             ${gridMixin('repeat(2, 1fr)', '0.4fr 1fr 0.3fr')};
             .header {
@@ -88,6 +88,28 @@ const crewStyling = css`
             p,
             h4 {
                 text-align: left;
+            }
+        }
+    }
+    @media ${devices.landscapeMobileSS} {
+        &.crew {
+            .header {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 0 0 6vh 3vh;
+            }
+            .img-cont {
+                height: 49.9vh;
+                img {
+                    height: 51vh;
+                }
+            }
+            section {
+                grid-area: 2/1/4/2;
+            }
+            ul {
+                grid-area: 3/2/3/2;
+                justify-content: center;
             }
         }
     }
