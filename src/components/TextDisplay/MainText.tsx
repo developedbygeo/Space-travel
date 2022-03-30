@@ -1,4 +1,4 @@
-import { BigHeading, MediumHeading, SmallSubheading, Description } from '../UI/Text.styled';
+import { BigHeading, SmallSubheading, Description } from '../UI/Text.styled';
 
 type MainTextProps = {
     details: {
