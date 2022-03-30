@@ -22,7 +22,7 @@ html{
       font-size: 45%;
     }
     @media ${devices.mobileL}{
-      font-size: 60%;
+      font-size: 55%;
     }
     @media ${devices.tablet}{
       font-size: 60%;
@@ -30,20 +30,26 @@ html{
     @media ${devices.laptopL}{
       font-size: 65.5%;
     }
+    @media ${devices.laptopL}{
+      font-size: 90%;
+    }
     @media ${devices.desktop}{
-      font-size: 70%;
+      font-size: 120%;
     }
     @media ${devices.landscapeMobileSS}{
       font-size: 22%;
     }
     @media ${devices.landscapeMobileS}{
-      font-size: 30%;
+      font-size: 32.5%;
+    }
+    @media ${devices.landscapeMobileM}{
+      font-size: 40%;
     }
     @media ${devices.landscapeMobileL}{
       font-size: 45%;
     }
     @media ${devices.desktop4K}{
-      font-size: 110%;
+      font-size: 170%;
     }
 }
 body{
@@ -63,6 +69,10 @@ main{
     margin: auto;
     background: transparent;
     overflow-x: hidden;
+    &>svg{
+      width: 100%;
+      height: 100%;
+    }
 
 }
 #root{
