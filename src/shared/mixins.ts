@@ -29,3 +29,11 @@ export const resetDefaults = css`
     outline: none;
     background: transparent;
 `;
+
+export const opacityMixin = css`
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px) brightness(0.6) contrast(0.9);
+        background: rgba(255, 255, 255, 0.03);
+    }
+`;
