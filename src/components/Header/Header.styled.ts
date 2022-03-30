@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { devices } from '../../shared/breakpoints';
-import { flexMixin } from '../../shared/mixins';
+import { flexMixin, opacityMixin } from '../../shared/mixins';
 import { interactAndHover, showActive } from '../../shared/styles/interactive.styles';
 
 const StyledHeader = styled.header`
@@ -23,7 +23,6 @@ const StyledHeader = styled.header`
         font-weight: 800;
     }
 
-    /* mobile-specific */
     .mobile-nav {
         position: absolute;
         right: 0;
@@ -33,14 +32,10 @@ const StyledHeader = styled.header`
         width: 60vw;
         padding: 25% 8vw;
         ${flexMixin('flex-start', 'flex-start', 'column')};
-        background-color: rgba(${({ theme }) => theme.colors.nav}, 0.95);
+        background: rgba(${({ theme }) => theme.colors.mainBg}, 0.965);
 
-        @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-            background-color: rgba(151, 151, 151, 0.25);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-        }
-        & > .link-wrapper {
+        ${opacityMixin};
+        .link-wrapper {
             height: 40%;
             width: 100%;
             ${flexMixin('space-around', 'flex-start', 'column')};
@@ -52,6 +47,12 @@ const StyledHeader = styled.header`
                 ${interactAndHover};
                 font-family: 'Barlow Condensed', sans-serif;
                 text-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+                @media (hover: hover) {
+                    &::after,
+                    &::before {
+                        bottom: -5px;
+                    }
+                }
             }
             span,
             p {
@@ -59,25 +60,75 @@ const StyledHeader = styled.header`
             }
         }
     }
-    .tablet-nav {
-        width: 50%;
-        height: 100%;
-
+    .tablet-nav,
+    .desktop-nav {
+        width: 70%;
+        height: 70%;
+        background: rgba(${({ theme }) => theme.colors.mainBg}, 0.9);
+        ${opacityMixin};
         .link-wrapper {
-            ${flexMixin('space-between', 'center', 'row')};
-            background: ${({ theme }) => theme.colors.nav};
+            ${flexMixin('space-around', 'center', 'row')};
+            background: rgba(${({ theme }) => theme.colors.text}, 0.04);
             height: 100%;
         }
         a {
+            height: 100%;
+            padding: 1rem;
+            ${flexMixin('center', 'center', 'row')};
+            gap: 0.5rem;
             ${interactAndHover};
             font-family: 'Barlow Condensed', sans-serif;
+            p {
+                font-weight: 400;
+                opacity: 0.85;
+            }
+            span {
+                font-weight: 500;
+            }
         }
     }
     .active {
         ${showActive}
         span, p {
-            color: rgb(${({ theme }) => theme.colors.accent});
+            color: rgb(${({ theme }) => theme.colors.text});
         }
+        &::before {
+            bottom: 0;
+        }
+    }
+    .tablet-nav {
+        .link-wrapper {
+            a {
+                &::after {
+                    bottom: 0.2rem;
+                }
+            }
+        }
+    }
+
+    .desktop-nav {
+        height: 85%;
+        .link-wrapper {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                height: 0.15rem;
+                width: calc(27.5rem + 1vh);
+                background: rgba(${({ theme }) => theme.colors.text}, 0.125);
+                top: 50%;
+                left: -35vh;
+            }
+            a {
+                &::after {
+                    bottom: 0.2rem;
+                }
+            }
+        }
+    }
+    @media ${devices.laptop} {
+        padding: 0;
+        padding-left: 5%;
     }
 `;
 
