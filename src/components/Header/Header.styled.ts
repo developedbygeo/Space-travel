@@ -114,7 +114,7 @@ const StyledHeader = styled.header`
                 content: '';
                 position: absolute;
                 height: 0.15rem;
-                width: calc(27.5rem + 1vh);
+                width: calc(28.5rem + 2.5vh);
                 background: rgba(${({ theme }) => theme.colors.text}, 0.125);
                 top: 50%;
                 left: -35vh;
@@ -126,9 +126,50 @@ const StyledHeader = styled.header`
             }
         }
     }
+    @media ${devices.mobileSS} {
+        .logo {
+            transform: scale(0.5);
+        }
+    }
+    @media ${devices.mobileS} {
+        .logo {
+            transform: scale(0.75);
+        }
+    }
     @media ${devices.laptop} {
         padding: 0;
         padding-left: 5%;
+    }
+    @media ${devices.laptopXL} {
+        .logo {
+            transform: scale(1);
+        }
+    }
+    @media ${devices.desktop} {
+        .logo {
+            transform: scale(1.65);
+        }
+    }
+    @media ${devices.desktop4K} {
+        .logo {
+            transform: scale(2.5);
+        }
+    }
+
+    @media ${devices.landscapeMobileSS} {
+        .logo {
+            transform: scale(0.4);
+        }
+        .mobile-nav {
+            width: 40vw;
+            .link-wrapper {
+                height: 70%;
+                gap: 5vh;
+            }
+            .active::before {
+                bottom: -1.5rem;
+            }
+        }
     }
 `;
 
