@@ -36,9 +36,6 @@ export const colorInteract = css`
             color: ${({ theme }) => theme.colors.highlight};
         }
     }
-    &:active {
-        transform: scale(1.1);
-    }
 `;
 
 export const interactAndHover = css`
@@ -48,9 +45,9 @@ export const interactAndHover = css`
             position: absolute;
             content: '';
             left: 0%;
-            bottom: -3px;
+            bottom: -0.4rem;
             width: 100%;
-            height: 0.75px;
+            height: 0.15rem;
             transform-origin: right;
             transform: scaleX(0);
             background: rgb(${({ theme }) => theme.colors.accent});
@@ -67,14 +64,14 @@ export const interactAndHover = css`
 
 export const showActive = css`
     color: rgb(${({ theme }) => theme.colors.accent});
-    font-weight: 600;
+    font-weight: 500;
     position: relative;
     &::before {
         position: absolute;
         content: '';
         width: 100%;
         height: 0.35rem;
-        bottom: -0.5rem;
+        bottom: -0.4rem;
         left: 0%;
         background: rgb(${({ theme }) => theme.colors.accent});
     }
