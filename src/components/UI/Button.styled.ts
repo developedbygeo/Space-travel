@@ -6,6 +6,8 @@ import { elevationThree } from '../../shared/styles/shadows.styles';
 
 import { StyledProps } from '../../shared/models/props.model';
 
+import { motion } from 'framer-motion';
+
 export const UnstyledButton = styled.button<StyledProps>`
     height: ${({ height }) => height || '5rem'};
     width: ${({ width }) => width || '5rem'};
@@ -19,7 +21,7 @@ export const UnstyledButton = styled.button<StyledProps>`
     }
 `;
 
-export const CtaButton = styled.button<StyledProps>`
+export const CtaButton = styled(motion.button)<StyledProps>`
     ${resetDefaults}
     width: 30rem;
     height: 30rem;
