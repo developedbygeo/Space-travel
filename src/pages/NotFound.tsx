@@ -4,6 +4,8 @@ import { StyledSection } from '../components/UI/Container.styled';
 import MainText from '../components/TextDisplay/MainText';
 import { CtaButton } from '../components/UI/Button.styled';
 
+import { pageAnimation, fadeAnimation } from '../shared/animations';
+
 const NotFoundDetails = {
     subheading: 'Welp, looks like you...',
     heading: 'Got lost in space',
@@ -16,9 +18,11 @@ const NotFound = () => {
     const navigateHandler = () => navigate('/home');
 
     return (
-        <StyledSection className="not-found">
+        <StyledSection className="not-found" variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <MainText details={NotFoundDetails} />
-            <CtaButton onClick={navigateHandler}>Orbit to Home</CtaButton>
+            <CtaButton onClick={navigateHandler} variants={fadeAnimation}>
+                Orbit to Home
+            </CtaButton>
         </StyledSection>
     );
 };
