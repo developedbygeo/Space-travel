@@ -35,8 +35,8 @@ const Header = () => {
 
     return (
         <StyledHeader>
-            <Link to="/home">
-                <Logo className="logo" />
+            <Link to="/home" aria-label="Return to home">
+                <Logo className="logo" role="img" aria-label="logo" />
             </Link>
             {shouldButtonRender}
             {width < 768 ? navIsEnabled && <Nav className={navClass} /> : <Nav className={navClass} />}
