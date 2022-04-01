@@ -4,6 +4,7 @@ import { flexMixin } from '../../shared/mixins';
 
 const StyledTextDisplay = styled.section`
     height: 100%;
+    min-height: 20vh;
     .text-content {
         margin-block: 2vh;
         min-height: 22vh;
