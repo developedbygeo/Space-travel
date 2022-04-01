@@ -7,8 +7,8 @@ import crewStyling from '../../shared/dedicated-styles/crew.styles';
 import technologyStyling from '../../shared/dedicated-styles/technology.styles';
 import notFoundStyling from '../../shared/dedicated-styles/notFound.styles';
 import { flexMixin } from '../../shared/mixins';
-import { LayoutProps } from '../../shared/models/utils.model';
-import { getLayout } from '../../shared/utils';
+
+import { motion } from 'framer-motion';
 
 type AppContainerProps = {
     className: string;
@@ -24,9 +24,8 @@ export const AppContainer = styled.div<AppContainerProps>`
     background-size: cover;
 `;
 
-export const StyledSection = styled.section<LayoutProps>`
+export const StyledSection = styled(motion.section)`
     ${flexMixin('space-between', 'center', 'column')};
-    ${getLayout};
     height: 90%;
     width: 90%;
     margin: auto;
