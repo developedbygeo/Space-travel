@@ -3,7 +3,9 @@ import styled from 'styled-components/macro';
 import { flexMixin } from '../../shared/mixins';
 import { interactAndHover, showActive } from '../../shared/styles/interactive.styles';
 
-const StyledList = styled.ul`
+import { motion } from 'framer-motion';
+
+const StyledList = styled(motion.ul)`
     ${flexMixin('center', 'center', 'row')};
     gap: 2rem;
     text-transform: uppercase;
