@@ -1,8 +1,9 @@
 import styled from 'styled-components/macro';
+import { motion } from 'framer-motion';
 
 import { subheadingTypography } from '../../shared/styles/typography.styles';
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
     color: rgb(${({ theme }) => theme.colors.accent});
     text-align: center;
     line-height: 1.4;
@@ -10,7 +11,7 @@ export const Description = styled.p`
     font-weight: 300;
 `;
 
-export const BigHeading = styled.h1`
+export const BigHeading = styled(motion.h1)`
     font-size: 4.5rem;
     padding-block: 1rem;
     text-transform: uppercase;
@@ -18,13 +19,13 @@ export const BigHeading = styled.h1`
     margin: 0rem 0rem 1rem 0rem;
 `;
 
-export const MediumHeading = styled.h4`
+export const MediumHeading = styled(motion.h4)`
     font-size: 3rem;
     text-transform: uppercase;
     margin-block: 1rem;
 `;
 
-export const SmallSubheading = styled.p`
+export const SmallSubheading = styled(motion.p)`
     ${subheadingTypography};
     text-transform: uppercase;
     color: rgb(${({ theme }) => theme.colors.accent});
