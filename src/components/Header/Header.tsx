@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <StyledHeader>
-            <Link to="/">
+            <Link to="/home">
                 <Logo className="logo" />
             </Link>
             {shouldButtonRender}
