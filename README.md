@@ -1,4 +1,4 @@
-# Custom Threads
+# Space Travel
 
 <div style="display: flex">
 <img src='./public/sample-v.png' height='550px' width='300px' alt='mobile viewport - portrait mode'/>
