@@ -1,5 +1,8 @@
 import { BigHeading, SmallSubheading, Description } from '../UI/Text.styled';
 
+import { motion } from 'framer-motion';
+import { fadeAnimation } from '../../shared/animations';
+
 type MainTextProps = {
     details: {
         heading: string;
@@ -10,11 +13,11 @@ type MainTextProps = {
 
 const MainText = ({ details: { heading, subheading, body } }: MainTextProps) => {
     return (
-        <article className="text-content">
+        <motion.article className="text-content" variants={fadeAnimation}>
             {subheading && <SmallSubheading as="span">{subheading}</SmallSubheading>}
-            <BigHeading>{heading}</BigHeading>
-            <Description>{body}</Description>
-        </article>
+            <BigHeading variants={fadeAnimation}>{heading}</BigHeading>
+            <Description variants={fadeAnimation}>{body}</Description>
+        </motion.article>
     );
 };
 
