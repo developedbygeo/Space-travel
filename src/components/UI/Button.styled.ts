@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import { resetDefaults } from '../../shared/mixins';
 import { colorInteract, interactCta } from '../../shared/styles/interactive.styles';

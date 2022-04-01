@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import { flexMixin } from '../../shared/mixins';
 import { interactAndHover, showActive } from '../../shared/styles/interactive.styles';

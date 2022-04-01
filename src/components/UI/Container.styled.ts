@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import landingStyling from '../../shared/dedicated-styles/landing.styles';
 import destinationStyling from '../../shared/dedicated-styles/destination.styles';
