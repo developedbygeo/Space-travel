@@ -64,7 +64,7 @@ const crewStyling = css`
             .img-cont {
                 grid-area: 1/2/5/3;
                 img {
-                    height: 85vh;
+                    height: 70vh;
                 }
             }
 
