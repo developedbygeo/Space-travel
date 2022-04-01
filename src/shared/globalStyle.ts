@@ -28,13 +28,13 @@ html{
       font-size: 60%;
     }
     @media ${devices.laptopL}{
-      font-size: 65.5%;
+      font-size: 62.5%;
     }
-    @media ${devices.laptopL}{
-      font-size: 90%;
+    @media ${devices.laptopXL}{
+      font-size: 69%;
     }
     @media ${devices.desktop}{
-      font-size: 120%;
+      font-size: 100%;
     }
     @media ${devices.landscapeMobileSS}{
       font-size: 22%;
@@ -49,7 +49,7 @@ html{
       font-size: 45%;
     }
     @media ${devices.desktop4K}{
-      font-size: 170%;
+      font-size: 135%;
     }
 }
 body{
