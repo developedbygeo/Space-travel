@@ -3,8 +3,6 @@ import { css } from 'styled-components';
 import { devices } from '../breakpoints';
 import { gridMixin, flexMixin } from '../mixins';
 
-// TODO consolidate media queries into one snippet
-
 const destinationStyling = css`
     &.destination,
     &.crew {
