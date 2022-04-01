@@ -1,5 +1,7 @@
 import { MediumHeading, SmallSubheading } from '../UI/Text.styled';
 
+import { fadeAnimation } from '../../shared/animations';
+
 type ExtraDetails = {
     extraDetails: {
         title: string;
@@ -10,8 +12,8 @@ type ExtraDetails = {
 const ExtraText = ({ extraDetails: { title, data } }: ExtraDetails) => {
     return (
         <div>
-            <SmallSubheading>{title}</SmallSubheading>
-            <MediumHeading>{data}</MediumHeading>
+            <SmallSubheading variants={fadeAnimation}>{title}</SmallSubheading>
+            <MediumHeading variants={fadeAnimation}>{data}</MediumHeading>
         </div>
     );
 };
