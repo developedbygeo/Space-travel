@@ -8,20 +8,22 @@ import StyledTextDisplay from '../components/UI/TextDisplay.styled';
 import StyledList from '../components/UI/List.styled';
 import { DotToggle } from '../components/UI/Button.styled';
 
+import { pageAnimation, fadeAnimation } from '../shared/animations';
+
 const Crew = () => {
     const [currCrew, crewData, crewHandler] = useData('crew');
     const { role, name, bio, images } = currCrew as CrewDataType;
     const crewDetails = { subheading: role, heading: name, body: bio };
 
     return (
-        <StyledSection className="crew">
+        <StyledSection className="crew" variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <ContentDisplay
                 step="02."
                 heading="meet your crew"
                 path={require(`../assets${images.webp}`)}
                 alt={currCrew.name}
             >
-                <StyledList>
+                <StyledList variants={fadeAnimation}>
                     {crewData.map((member, index) => (
                         <DotToggle
                             className={member.name === currCrew.name ? 'btn-active' : ''}
