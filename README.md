@@ -40,6 +40,7 @@ npm test
 
 ## <a id='features'></a>Features
 
+-   Dynamic website background based on path.
 -   JSON-fetched data with a custom hook to facilitate only essential data extraction.
 -   Animated page transitions and component presentation.
 -   Fully-responsive in both landscape & portrait mode.
