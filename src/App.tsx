@@ -14,14 +14,16 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 import { matchRegex } from './shared/appBackgroundImg';
 import { AppContainer } from './components/UI/Container.styled';
 
+import { AnimatePresence } from 'framer-motion';
+
 const regex = /^\/[a-z]+$/;
 
 const acceptedPaths = ['home', 'destination', 'crew', 'technology'];
 
 const App = () => {
-    const { pathname } = useLocation();
-    const derivedClassname = matchRegex(pathname, regex, 'home');
-    const notFoundBackground = !acceptedPaths.includes(pathname.replace('/', '')) ? 'notFound' : '';
+    const location = useLocation();
+    const derivedClassname = matchRegex(location.pathname, regex, 'home');
+    const notFoundBackground = !acceptedPaths.includes(location.pathname.replace('/', '')) ? 'notFound' : '';
 
     return (
         <>
@@ -29,16 +31,18 @@ const App = () => {
             <AppContainer className={`appcont ${derivedClassname} ${notFoundBackground}`}>
                 <Header />
                 <main>
-                    <Suspense fallback={<Skeleton />}>
-                        <Routes>
-                            <Route path="/" element={<Navigate to="/home" />} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/destination" element={<Destination />} />
-                            <Route path="/crew" element={<Crew />} />
-                            <Route path="/technology" element={<Technology />} />
-                            <Route path="*" element={<NotFound />} />
-                        </Routes>
-                    </Suspense>
+                    <AnimatePresence exitBeforeEnter>
+                        <Suspense fallback={<Skeleton />}>
+                            <Routes location={location} key={location.key}>
+                                <Route path="/" element={<Navigate to="/home" />} />
+                                <Route path="/home" element={<Home />} />
+                                <Route path="/destination" element={<Destination />} />
+                                <Route path="/crew" element={<Crew />} />
+                                <Route path="/technology" element={<Technology />} />
+                                <Route path="*" element={<NotFound />} />
+                            </Routes>
+                        </Suspense>
+                    </AnimatePresence>
                 </main>
             </AppContainer>
         </>
