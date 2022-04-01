@@ -3,6 +3,8 @@ import styled from 'styled-components/macro';
 import { devices } from '../../shared/breakpoints';
 import { flexMixin } from '../../shared/mixins';
 
+import { motion } from 'framer-motion';
+
 const StyledContent = styled.article`
     ${flexMixin('space-between', 'center', 'column')};
     height: 100%;
@@ -23,7 +25,7 @@ const StyledContent = styled.article`
     }
 `;
 
-export const StyledContentHeader = styled.div`
+export const StyledContentHeader = styled(motion.div)`
     width: 100%;
     ${flexMixin('center', 'center', 'row')};
     gap: 2rem;
@@ -34,7 +36,7 @@ export const StyledContentHeader = styled.div`
         justify-content: flex-start;
     }
 `;
-export const StyledContentImage = styled.img`
+export const StyledContentImage = styled(motion.img)`
     width: 100%;
     height: 25vh;
     object-fit: contain;
