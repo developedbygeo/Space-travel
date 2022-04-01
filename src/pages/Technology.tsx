@@ -10,6 +10,8 @@ import StyledTextDisplay from '../components/UI/TextDisplay.styled';
 import StyledList from '../components/UI/List.styled';
 import { TechButton } from '../components/UI/Button.styled';
 
+import { pageAnimation } from '../shared/animations';
+
 const Technology = () => {
     const windowWidth = useWindowWidth();
     const [currTech, techData, techHandler] = useData('technology');
@@ -18,7 +20,7 @@ const Technology = () => {
     const techDetails = { subheading: 'the terminology...', heading: name, body: description };
 
     return (
-        <StyledSection className="technology">
+        <StyledSection className="technology" variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <ContentDisplay
                 step="03."
                 heading="space launch 101"
