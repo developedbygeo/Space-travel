@@ -10,7 +10,7 @@
 
 A React-based, fully responsive website that uses JSON data and combines creative design and space adventures.
 
-This project was a lovely opportunity to follow a provided, structured Figma design and bring to life. It implements lazy loading and component/page animations, and is based on TypeScript, Redux Toolkit, Styled Components and Framer Motion. For a detailed overview, please have a look at the [**Features**](#features) & [**Tech**](#tech) section.
+This project was a lovely opportunity to follow a provided, structured Figma design and bring to life. It implements lazy loading & component/page animations, and is based on TypeScript, React Router, Styled Components and Framer Motion. For a detailed overview, please have a look at the [**Features**](#features) & [**Tech**](#tech) section.
 
 **Important Note**: All of the image assets, along with the design files were provided by Frontend Mentor, as part of the _Space tourism multi-page website_ challenge.
 
@@ -50,7 +50,6 @@ npm test
 -   React
 -   TypeScript
 -   React Router
--   Redux Toolkit
 -   Styled Components
 -   Framer Motion
 -   Lodash
