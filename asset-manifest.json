@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/Space-travel/static/js/main.9bcfe498.js",
-    "static/js/293.cbcc36ad.chunk.js": "/Space-travel/static/js/293.cbcc36ad.chunk.js",
-    "static/js/854.bd7ac863.chunk.js": "/Space-travel/static/js/854.bd7ac863.chunk.js",
-    "static/js/135.221cb920.chunk.js": "/Space-travel/static/js/135.221cb920.chunk.js",
-    "static/js/993.bfd8d87c.chunk.js": "/Space-travel/static/js/993.bfd8d87c.chunk.js",
-    "static/js/949.42c8e0bf.chunk.js": "/Space-travel/static/js/949.42c8e0bf.chunk.js",
+    "main.js": "/Space-travel/static/js/main.5a7e7514.js",
+    "static/js/293.b679aecf.chunk.js": "/Space-travel/static/js/293.b679aecf.chunk.js",
+    "static/js/854.51547d1d.chunk.js": "/Space-travel/static/js/854.51547d1d.chunk.js",
+    "static/js/135.c3a99a48.chunk.js": "/Space-travel/static/js/135.c3a99a48.chunk.js",
+    "static/js/993.63b18f7c.chunk.js": "/Space-travel/static/js/993.63b18f7c.chunk.js",
+    "static/js/949.a47699e0.chunk.js": "/Space-travel/static/js/949.a47699e0.chunk.js",
     "static/js/763.6b19f999.chunk.js": "/Space-travel/static/js/763.6b19f999.chunk.js",
     "static/media/notFound.jpg": "/Space-travel/static/media/notFound.ea71ec3ea2dacf61021e.jpg",
     "static/media/background-home-desktop.jpg": "/Space-travel/static/media/background-home-desktop.cdf3864ecbfdf20e8c3b.jpg",
@@ -34,15 +34,15 @@
     "static/media/image-titan.webp": "/Space-travel/static/media/image-titan.80738bc61e5d1217a19a.webp",
     "index.html": "/Space-travel/index.html",
     "static/media/logo.svg": "/Space-travel/static/media/logo.565f7f2c0534403f11b71994f4311210.svg",
-    "main.9bcfe498.js.map": "/Space-travel/static/js/main.9bcfe498.js.map",
-    "293.cbcc36ad.chunk.js.map": "/Space-travel/static/js/293.cbcc36ad.chunk.js.map",
-    "854.bd7ac863.chunk.js.map": "/Space-travel/static/js/854.bd7ac863.chunk.js.map",
-    "135.221cb920.chunk.js.map": "/Space-travel/static/js/135.221cb920.chunk.js.map",
-    "993.bfd8d87c.chunk.js.map": "/Space-travel/static/js/993.bfd8d87c.chunk.js.map",
-    "949.42c8e0bf.chunk.js.map": "/Space-travel/static/js/949.42c8e0bf.chunk.js.map",
+    "main.5a7e7514.js.map": "/Space-travel/static/js/main.5a7e7514.js.map",
+    "293.b679aecf.chunk.js.map": "/Space-travel/static/js/293.b679aecf.chunk.js.map",
+    "854.51547d1d.chunk.js.map": "/Space-travel/static/js/854.51547d1d.chunk.js.map",
+    "135.c3a99a48.chunk.js.map": "/Space-travel/static/js/135.c3a99a48.chunk.js.map",
+    "993.63b18f7c.chunk.js.map": "/Space-travel/static/js/993.63b18f7c.chunk.js.map",
+    "949.a47699e0.chunk.js.map": "/Space-travel/static/js/949.a47699e0.chunk.js.map",
     "763.6b19f999.chunk.js.map": "/Space-travel/static/js/763.6b19f999.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.9bcfe498.js"
+    "static/js/main.5a7e7514.js"
   ]
 }
