@@ -1,36 +1,24 @@
-import { keyframes } from 'styled-components';
+export const pageAnimation = {
+    hidden: { opacity: 0, x: -100 },
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.75, ease: 'easeOut', when: 'beforeChildren', staggerChildren: 0.25 },
+    },
+    exit: { opacity: 0, x: 100, transition: { duration: 0.35, ease: 'easeOut' } },
+};
 
-export const houdini = keyframes`
-from{
-  opacity: 0;
-}
-to{
-  opacity: 1;
-}
-`;
+export const titleAnimation = {
+    hidden: { y: 200 },
+    show: { y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
 
-export const spinning = keyframes`
-from{
-    transform: rotate(0deg)
-}to{
-    transform: rotate(360deg);
-}
-`;
+export const fadeAnimation = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+};
 
-export const bumpText = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.9865);
-  }
-  30% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.135);
-  }
-  100% {
-    transform: scale(1);
-  }
-`;
+export const photoAnimation = {
+    hidden: { scale: 1.25, opacity: 0 },
+    show: { scale: 1, opacity: 1, transition: { duration: 0.65, ease: 'easeOut' } },
+};
